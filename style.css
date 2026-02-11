@@ -1,0 +1,69 @@
+:root {
+    --bg: #050505;
+    --cyan: #00f0ff;
+    --purple: #8a2be2;
+    --text: #e0e0e0;
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Scanline Effect */
+.scanline {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 5%;
+    position: fixed; width: 100%; top: 0; z-index: 1000;
+    background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo { font-family: 'Syne'; font-weight: 800; font-size: 1.5rem; }
+.logo span { color: var(--cyan); }
+
+.hero {
+    height: 100vh; display: flex; align-items: center; justify-content: center;
+    text-align: center; position: relative;
+    background: radial-gradient(circle at center, #101420 0%, #050505 100%);
+}
+
+.grid-overlay {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(var(--border) 1px, transparent 1px), 
+                      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle, black, transparent 80%);
+}
+
+.hero h1 { font-family: 'Syne'; font-size: 5rem; margin: 0; }
+.tagline { color: var(--cyan); letter-spacing: 5px; margin-top: 10px; }
+
+.btn-primary {
+    background: var(--cyan); color: #000; border: none;
+    padding: 15px 30px; font-weight: 700; cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3); transition: 0.3s;
+}
+
+.fact-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    padding: 30px; border-radius: 15px;
+    backdrop-filter: blur(10px); transition: 0.3s;
+}
+
+.fact-card:hover { border-color: var(--cyan); transform: translateY(-5px); }
